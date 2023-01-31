@@ -1,6 +1,9 @@
 #!/bin/sh
-echo "this script is from github"
-NUMBER=$(($NUMBERONE + $NUMBERTWO))
-echo "$NUMBER" >> result.txt
 git config --global user.name "Diego"
 git config --global user.email "diego@lin.com"
+echo "this script is from github"
+NUMBER=$(($NUMBERONE + $NUMBERTWO))
+DATE=$(date)
+echo "$DATE Result is: $NUMBER" >> result.txt
+
+
