@@ -5,7 +5,7 @@ echo "this script is from github"
 NUMBER=$(($NUMBERONE + $NUMBERTWO))
 DATE=$(date)
 echo "$DATE Result is: $NUMBER" >> result.txt
-files=( "./result.txt" "otherfile.txt")
+files=( "./result.txt" "otherfile.txt" )
 for file in "${files[@]}"
 do
   cat file.txt
