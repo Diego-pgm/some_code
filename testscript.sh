@@ -7,7 +7,7 @@ DATE=$(date)
 echo "$DATE Result is: $NUMBER" >> result.txt
 for file in "result.txt" "other.txt"
 do
-  cat file.txt
+  cat file
   if [[ $? -ne 0 ]]
   then
     echo "file not found"
