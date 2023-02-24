@@ -11,11 +11,15 @@ pipeline {
   }
   stages{
     stage('Prepare') {
-      echo 'Generating version'
-      VERSION = BUILD_NUMBER
-      if ( AUTO_BUILD.toBoolean() ) {
-        timeout(time: 4, unit: 'MINUTES'){
-          input "This build was triggered automatically\nDo you approve?" 
+      steps {
+        script {
+          echo 'Generating version'
+          VERSION = BUILD_NUMBER
+          if ( AUTO_BUILD.toBoolean() ) {
+            timeout(time: 4, unit: 'MINUTES'){
+              input "This build was triggered automatically\nDo you approve?" 
+            }
+          }
         }
       }
     }
