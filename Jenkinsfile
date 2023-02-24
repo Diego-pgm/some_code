@@ -1,6 +1,6 @@
 pipeline {
   environment{
-    AUTO_BUILD = "$!{!currentBuild.rawBuild.getCauses()[0].toString().contains('UserIdCause') ? 'true' : 'false'}"
+    AUTO_BUILD = "${!currentBuild.rawBuild.getCauses()[0].toString().contains('UserIdCause') ? 'true' : 'false'}"
   }
   agent any
   options {
