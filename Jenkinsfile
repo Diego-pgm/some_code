@@ -2,10 +2,10 @@ pipeline {
   environment{
     AUTO_BUILD = "${!currentBuild.rawBuild.getCauses()[0].toString().contains('UserIdCause') ? 'true' : 'false'}"
   }
-  agent any
   options {
-     buildDiscarder(logRotator(numToKeepStr:'25') 
+     buildDiscarder(logRotator(numToKeepStr:'25'))
   }
+  agent any
   triggers {
     pollSCM 'H/5 * * * *'
   }
